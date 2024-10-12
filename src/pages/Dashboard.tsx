@@ -39,7 +39,7 @@ function Dashboard() {
   }, []);
 
   return (
-    <div className='w-full bg-neutral-50 h-full px-24'>
+    <div className='w-full bg-neutral-50 h-full px-4 sm:px-24'>
         <Header />
         <h2 className='font-bold'>All registered users</h2>
         <div className="p-4">

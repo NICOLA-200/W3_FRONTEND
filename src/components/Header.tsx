@@ -16,7 +16,7 @@ function Header() {
 
       <div className='flex gap-6 flex-row'>
       {/* Search Input */}
-      <div className="flex items-center bg-white border border-blue-200 rounded-lg sm:p-1 shadow-md max-w-md">
+      <div className="flex items-center bg-white border border-blue-200 rounded-lg sm:p-1 shadow-md min-w-24 h-14 max-w-md">
         <IoMdSearch className="text-gray-500 mr-2" />
         <input
           type="text"
