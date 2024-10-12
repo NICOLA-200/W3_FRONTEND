@@ -29,7 +29,7 @@ function Header() {
     <button onClick={() => {
       auth.logout()
       navigate('/adminLogin')
-      }} className='flex gap-3 items-center'>
+      }} className='flex gap-3 hover:text-blue-700 items-center'>
     <span> Log Out </span>
     <BiLogOut size={40} />
     </button>
