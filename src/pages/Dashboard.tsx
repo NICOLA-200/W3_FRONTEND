@@ -19,7 +19,7 @@ function Dashboard() {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/allUsers');
+      const response = await axios.get('https://w3-backend.onrender.com/allUsers');
       setUsers(response.data.data); // Assuming your API response is structured like { message: ..., data: [...] }
       setLoading(false);
     } catch (err) {
@@ -32,8 +32,9 @@ function Dashboard() {
     
     fetchUsers();
 
-
+   
     const intervalId = setInterval(fetchUsers, 5000);
+
     return () => clearInterval(intervalId);
   }, []);
 

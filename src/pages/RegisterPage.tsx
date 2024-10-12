@@ -30,7 +30,7 @@ const RegisterPage: React.FC = () => {
 
     try {
       setLoading(true); 
-      const response = await axios.post('http://localhost:3001/user', formData, {
+      const response = await axios.post('https://w3-backend.onrender.com/user', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
