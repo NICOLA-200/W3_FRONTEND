@@ -17,21 +17,25 @@ function Dashboard() {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await axios.get('http://localhost:3001/allUsers'); // Update the URL according to your API
-        setUsers(response.data.data); // Assuming your API response is structured like { message: ..., data: [...] }
-        setLoading(false);
-      } catch (err) {
-        setError('Failed to fetch users');
-        setLoading(false);
-      }
-    };
+  const fetchUsers = async () => {
+    try {
+      const response = await axios.get('http://localhost:3001/allUsers');
+      setUsers(response.data.data); // Assuming your API response is structured like { message: ..., data: [...] }
+      setLoading(false);
+    } catch (err) {
+      setError('Failed to fetch users');
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
+    
     fetchUsers();
+
+
+    const intervalId = setInterval(fetchUsers, 5000);
+    return () => clearInterval(intervalId);
   }, []);
- 
 
   return (
     <div className='w-full bg-neutral-50 h-full px-24'>
